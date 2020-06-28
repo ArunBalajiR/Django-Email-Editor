@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+/************************ HEADER AND LEFT PANEL START ********************************/
+
+.headerbar {
+    overflow: hidden;
+    background-color: #FFF;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoblock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding-left: 32px;
+}
+
+.logoicon {
+    height: 36px;
+}
+
+.logoname {
+    min-width: 200px;
+    padding-left: 10px;
+    font-size: 24px;
+    color: #666666;
+    font-family: 'Racing Sans One', cursive;
+}
+
+.buttonblock {
+    height: 100%;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.buttonblock > button{
+    margin: 0px 0px 0px 20px;
+    height: 30px;
+    width: 120px;
+    background-color: #F6F7F8;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: #666666;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttonblock > button:hover{
+    background-color: #333;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+.buttonblock > button:active{
+    background-color: #666;
+}
+
+
+.leftpanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-left: 40px;
+    padding-top: 20px;
+    overflow: hidden;
+    background-color: #F6F7F8;
+    position: fixed;
+    left: 0;
+    width: 280px;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    box-sizing: border-box;
+    border-right: solid 1px #DDD;
+}
+
+.hr1{
+    margin: 20px 0 20px 0;
+    border-bottom: solid 1px #EEEEEE;
+    width: 90%;
+}
+
+.composebtn{
+    width: 120px;
+    min-height: 30px;
+    background-color: #3187E1;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin: 15px 100px 15px 40px;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.1);
+}
+
+.composebtn:hover{
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.composebtn:active{
+    background-color: #666;
+}
+
+.pagelink{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #666666;
+}
+
+.pagelink:hover{
+    color: #3187E1;
+}
+
+.pagelink.active{
+    color: #3187E1;
+}
+
+.pagelink > i{
+    width: 30px;
+}
+
+.welcomelabel{
+    color: #666666;
+}
+
+.nameblock{
+    margin-top: 0px;
+    font-size: 36px;
+    font-weight: 300;
+    color: #666666;
+    letter-spacing: 2px;
+}
+
+.rightbox {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    width: calc(100vw - 280px);
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/************************ HEADER AND LEFT PANEL END ********************************/
+
+/************************ COMPOSE MAIL WINDOW START  *********************************/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
+    margin-top: calc(50vh - 270px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 880px;
+    height: 540px;
+    box-sizing: border-box;
+}
+
+.cont {
+    height: 90%;
+    width: 100%;
+    /*margin: 2% 2% 2% 2%;*/
+    display: flex;
+    /*flex-direction: column;*/
+}
+
+.close {
+    color: #fefefe;
+    float: right;
+    font-size: 36px;
+    line-height: 24px;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cont > div{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cont > div > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 5px 20px 5px 20px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+}
+.cont label{
+    border:
+
+}
+/************************ EMAIL EDITOR TOP PANEL  START *********************************/
+.tg  {
+    border-collapse:collapse;
+    border-color:#BEBEBE;
+    border-spacing:0;
+}
+.tg td{
+    background-color:#EBF5FF;
+    border-color:#BEBEBE;
+    border-style:solid;
+    border-width:1px;
+    color:#444;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    overflow:hidden;
+    padding:13px 20px;
+    word-break:normal;
+}
+.tg th{
+    background-color:#409cff;
+    border-color:#BEBEBE;
+    border-style:solid;
+    border-width:1px;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:13px 20px;
+    word-break:normal;
+}
+.tg .tg-lboi{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:middle
+}
+.tg .tg-9wq8{
+    border-color:inherit;
+    text-align:center;
+    vertical-align:middle
+}
+.tg .tg-r5qm{
+    border-color:inherit;font-size:18px;
+    text-align:left;
+    vertical-align:middle
+}
+table td {
+  position: relative;
+}
+
+table td input {
+  position: absolute;
+  display: block;
+  top:0;
+  left:0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-color: transparent;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  /*border: 1px solid #000;*/
+}
+td.tg-c3ow {
+  width: 15%
+}
+th.subject {
+  width: 70%;
+}
+input:focus, textarea:focus, select:focus{
+outline: none;
+}
+
+/************************ EMAIL EDITOR TOP PANEL END *********************************/
+
+/************************ CKEDITOR FIXED SIZE START  *********************************/
+#cke_bottom_detail,.cke_bottom
+{
+display:none;
+}
+.sendbtn{
+background-color: #3187E1;
+
+font-family: 'Open Sans', sans-serif;
+color: #FFF;
+font-size: 14px;
+letter-spacing: 1.5px;
+
+box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.1);
+}
+
+.sendbtn:hover{
+background-color: #333;
+transition: 0.3s;
+}
+
+.sendbtn:active{
+background-color: #666;
+}
+
+/************************ CKEDITOR FIXED SIZE START  *********************************/
+
+/************************ COMPOSE MAIL WINDOW END  *********************************/
